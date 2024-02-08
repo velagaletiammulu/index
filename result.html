@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Result</title>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <!-- Add any additional stylesheets or scripts as needed -->
+</head>
+<body>
+
+<div class="result" id="result-positive">
+    <h1>This person has Heart Disease</h1>
+    <i class="fa fa-frown-o"></i>
+    <a href="#"><button>Try for another person</button></a>
+</div>
+
+<div class="result" id="result-negative">
+    <h1>This Person doesn't have heart disease</h1>
+    <i class="fa fa-smile-o"></i>
+    <a href="#"><button>Try for another person</button></a>
+</div>
+
+<!-- Add any additional scripts or footer content as needed -->
+function submitForm() {
+    // Get form data
+    var formData = {
+        "age": parseInt(document.getElementById("age").value),
+        "sex": parseInt(document.querySelector('input[name="sex"]:checked').value),
+        // ... add other form fields ...
+    };
+
+    // Perform logic to determine positive or negative result
+    var isPositiveResult = // your logic here based on formData;
+
+    // Redirect to the appropriate page
+    if (isPositiveResult) {
+        window.location.href = "positive_result.html";
+    } else {
+        window.location.href = "negative_result.html";
+    }
+}
+
+</body>
+</html>
